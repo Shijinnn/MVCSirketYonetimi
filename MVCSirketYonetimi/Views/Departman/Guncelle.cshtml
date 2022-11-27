@@ -1,0 +1,26 @@
+﻿@model MVCSirketYonetimi.Data.Models.Entities.Departman
+@{
+    /**/
+
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Çalışan Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("Guncelle", "Departman", FormMethod.Post))
+{
+
+
+    <div class"form-group">
+        @Html.LabelFor(x => x.Ad)
+        @Html.TextAreaFor(x => x.Ad, new { @class = "form-control" })
+
+    
+
+    </div>
+    @Html.HiddenFor(x => x.Id)
+    <br />
+    <button type="submit" class="btn btn-success"> Departmanı Guncelle</button>
+}
+

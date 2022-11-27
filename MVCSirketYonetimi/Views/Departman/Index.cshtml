@@ -1,0 +1,40 @@
+﻿@using MVCSirketYonetimi.Data.Models.Entities
+@model List<Departman>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a class="btn btn-danger" href="/Departman/Ekle">Departman Ekleme Sayfasına Git</a>
+
+
+<h2>Departmanlar Listesi</h2>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var departman in Model)
+        {
+            <tr>
+                <td>@departman.Id</td>
+                <td>@departman.Ad</td>
+                 
+
+                <td><a class="btn btn-primary" href="/Departman/Guncelle/@departman.Id">Güncelle</a></td>
+                <td><a class="btn btn-primary" href="/Departman/Sil/@departman.Id">Sil</a></td>
+
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
